@@ -1,10 +1,12 @@
 if(!localStorage.hasOwnProperty('AdminDash')){
     console.log("Login required")
-setTimeout(() => {
+    setTimeout(() => {
     window.open("/login.html", "_top")
-}, 500);
+    }, 500);
     
 }
+
+
 
 else{
     var details = localStorage.getItem('AdminDash')
@@ -14,3 +16,16 @@ else{
     console.log(Importedemail.email)
     document.getElementById("name").innerHTML = Importedemail.name
 }
+//
+
+var logoutBtn = document.getElementById("logout")
+logoutBtn.addEventListener("click", logoutFunc)
+
+function logoutFunc(){
+
+    localStorage.removeItem('AdminDash')
+    window.open('/login.html', '_top')
+
+}
+
+

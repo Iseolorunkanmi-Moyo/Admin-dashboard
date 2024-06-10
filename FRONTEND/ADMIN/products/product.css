@@ -280,7 +280,6 @@ thead >tr > td{
     width: 100%;
     max-width: calc(100%/ 5);
     overflow:hidden ;
-    /* overflow-y: scroll; */
     scrollbar-width: thin;
     height: 50px;
     padding: 10px;
