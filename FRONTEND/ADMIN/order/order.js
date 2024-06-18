@@ -1,13 +1,13 @@
-function fetchData(){
-fetch("/DATABASE/User Data/userData.json")
-.then(res => {
+var orderProcessBtn = document.getElementById('orderProcessBtn')
+
+
+fetch("/DATABASE/order.json")
+  .then(res => {
     // console.log(res)
     return res.json();
-})
+  })
 
-.then( (objectData) => {
-
-    document.getElementById("table-body").innerHTML = ""
+  .then((objectData) => {
 
 
     var mainRow = document.createElement('tr');
@@ -32,7 +32,7 @@ fetch("/DATABASE/User Data/userData.json")
       var cell6 = document.createElement('td')
       var viewBtn = document.createElement('button')
       viewBtn.innerText = "View"
-      viewBtn.addEventListener("click", openCustomer)
+      viewBtn.addEventListener("click", openViewOrder)
 
       viewBtn.name = objectData[i].uniqueNumber
 
@@ -42,52 +42,42 @@ fetch("/DATABASE/User Data/userData.json")
       mainRow.appendChild(cell2)
       mainRow.appendChild(cell3)
       mainRow.appendChild(cell4)
-    //   mainRow.appendChild(cell5)
+      // mainRow.appendChild(cell5)
       mainRow.appendChild(cell6)
 
       cell1.textContent = objectData[i].uniqueNumber
       cell2.textContent = objectData[i].email
-      cell3.textContent = objectData[i].name
-      cell4.textContent = objectData[i].pendingOrders
+      cell3.textContent = objectData[i].productName
+      cell4.textContent = objectData[i].status
       // cell5.textContent = objectData[i].address
-      viewBtn.onclick = `openCustomer(${i})`
+      viewBtn.onclick = `openViewOrder(${i})`
 
       cell6.appendChild(viewBtn)
-    
-    var table =  document.getElementById("table-body").appendChild(mainRow)
-    
 
+      var tableBody = document.getElementById("table-body")
+      tableBody.appendChild(mainRow);
     }
 
-}
-  
-)
+  })
 
-.catch(error => console.log('error'));
+  .catch(error => console.log('error'));
 
-}
+function openViewOrder(inde) {
 
-setInterval(fetchData, 2000)
-
-fetchData()
-
-
-function openCustomer(inde){
-        
-    inde = (this.name) 
+  inde = (this.name) 
   console.log(inde)
 
   var userName = document.getElementById("userName")
   var email = document.getElementById("email")
-  var PendingOrders = document.getElementById("Pending-Orders")
+  var productName = document.getElementById("product-name")
   var productQuantity = document.getElementById("product-quantity")
   var userAddress = document.getElementById("userAddress")
   var phone = document.getElementById("PhoneNumber")
-  var userImage = document.getElementById("userImage")
+  var productImgSrc = document.getElementById("productImgSrc")
   var status = document.getElementById("status")
   var productSerialNumber = document.getElementById("ProductSerialNumber")
 
-  fetch("/DATABASE/User Data/userData.json")
+  fetch("/DATABASE/order.json")
   .then(res => {
     // console.log(res)
     return res.json();
@@ -95,30 +85,51 @@ function openCustomer(inde){
 
   .then((objectData) => {
 
+
     const searchTerm = inde;
 
     for (let i = 0; i < objectData.length; i++) {
       if (objectData[i].uniqueNumber === searchTerm) {
+       
         userName.innerText = objectData[i].name  
         email.innerText = objectData[i].email
+        productName.innerText = objectData[i].productName
+        productQuantity.innerText = objectData[i].quantity
         userAddress.innerText = objectData[i].address
         phone.innerText = objectData[i].phone
-        PendingOrders.innerText = objectData[i].pendingOrders
-        userImage.setAttribute("src", objectData[i].userImageSrc)
+        productSerialNumber.innerText = objectData[i].productSerial
+        productName.innerText = objectData[i].productName
+        productImgSrc.setAttribute("src", objectData[i].productImageSrc)
+        status.innerText = objectData[i].status
+        orderProcessBtn.innerText = objectData[i].status
+    
+        if(objectData[i].status == "Processing"){
+          orderProcessBtn.style.zIndex = "-1"
+          orderProcessBtn.style.cursor = "none"
+          orderProcessBtn.innerHTML = "Processing"
+          orderProcessBtn.style.boxShadow = "0px 0px 0px 0px "
+          orderProcessBtn.style.opacity = 0.8
+        }
+    
+        else{
+          orderProcessBtn.style.zIndex = "0"
+          orderProcessBtn.style.cursor = "pointer"
+          orderProcessBtn.style.boxShadow = "0px 4px 0px 0px rgba(0, 0, 0, 0.2)"
+          orderProcessBtn.style.opacity = 1
+        }
+    
 
         // break;
       }
     } 
 
+
+   
   })
+  viewOrderBackground.style.display = "flex"
 
-//   setTimeout(() => {
-  viewOrderBackground.style.display = "flex"    
-//   }, 500);
-
+  
 }
-
-var cells = document.querySelector("td")
 
 var viewOrderBackground = document.getElementById('viewOrderBackground')
 
@@ -137,15 +148,13 @@ function closeviewOrderBackground(e) {
 }
 
 function closeviewOrder() {
-    viewOrderBackground.style.display = "none"
-  }
-  
-var searchBtn = document.getElementById("search-btn").addEventListener("click", search )
-
-function search(e){
-
+  viewOrderBackground.style.display = "none"
 }
 
-// document.getElementById("mode").addEventListener("click", function(e){
-    
-// })
+
+
+orderProcessBtn.addEventListener("click", orderProcessing)
+
+function orderProcessing(){
+  orderProcessBtn.innerText = 'Processing'
+}

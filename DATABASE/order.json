@@ -1,0 +1,28 @@
+[
+    {
+        "uniqueNumber" : "1",
+        "userImageSrc" :"",
+        "name": "Joseph ",
+        "email": "mj@gmail.com",
+        "productName" : "Air fodfdfrce 1",
+        "productSerial" :"1",
+        "productImageSrc" :"/FRONTEND/ADMIN/products/FUTAHUB Logo.png",
+        "phone" : "0810142868",
+        "quantity" : "2",
+        "address": "Landmark university",
+        "status": "Pending"
+    }, 
+    {
+        "uniqueNumber" : "2",
+        "userImageSrc" :"",
+        "name": " Moyo",
+        "email": "tomisin@gmail.com",
+        "productName" : "Air fodfdfrce 1",
+        "productSerial" :"1",
+        "productImageSrc" :"/FRONTEND/ADMIN/products/FUTAHUB Logo.png",
+        "phone" : "0810142868",
+        "quantity" : "2",
+        "address": "Landmark university",
+        "status": "Processing"
+    }
+]

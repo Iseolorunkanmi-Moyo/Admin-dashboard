@@ -19,7 +19,7 @@
                 </div>
             </a>
 
-            <a class="dash-link2" href="">
+            <a class="dash-link2" href="/FRONTEND//ADMIN/order/order.html">
                 <div>
                     <img class="dash-logo2" src="/FRONTEND/images/trolley-svgrepo-com.svg" alt="" />
                     Orders
@@ -38,7 +38,7 @@
                     Customer
                 </div>
             </a>
-            <a class="dash-link2" href="">
+            <a class="dash-link2" href="/FRONTEND/ADMIN/message/message.html">
                 <div>
                     <img class="dash-logo2" src="/FRONTEND/images/envelop-svgrepo-com.svg" alt="" />
                     Message
@@ -90,11 +90,12 @@
                 <table>
                     <thead>
                         <tr>
-                            <td>No.</td>
+                            <td>Unique No.</td>
                             <td>E-mail</td>
                             <td>Name</td>
-                            <td>Password</td>
-                            <td>Phone Number</td>                           
+                            <td>Pending Orders</td>
+                            
+                            <td>View</td>                          
                         </tr>
                     </thead>
 
@@ -105,6 +106,43 @@
                 </table>
             </div>
 
+        </div>
+
+        <div class="viewOrderBackground" id="viewOrderBackground">
+            <div class="viewOrderDiv">
+                <div class="orderHeader">
+                    <div class="h1"> User Info</div>
+                    <button class="closeViewOrder" onclick="closeviewOrder()">X</button>
+                </div>
+
+                <div class="modalContent1">
+
+                    <div class="userImageDiv">
+                        <img id="userImage" loading="lazy" class="userImage" src="" alt="">
+                    </div>
+
+                    <div class="modalSubContent">
+
+                        <div>
+                            <!-- <div class="productImgSrcDiv"><span id=""><img class="productImgSrc" id="productImgSrc"
+                                src="" alt=""></span></div> -->
+                            <div class="orderDetails">Name: <span id="userName"></span></div>
+                            <div class="orderDetails">Email: <span id="email"></span></div>
+                            <div class="orderDetails">Pending Orders<span id="Pending-Orders"> </span></div>
+                            <div class="orderDetails"><span id="product-quantity"> </span></div>
+                            <div class="orderDetails">Address:<span id="userAddress"></span></div>
+                            <div class="orderDetails"><span id="status"></span></div>
+                            <div class="orderDetails">Phone No.<span id="PhoneNumber"></span></div>
+                            <div class="orderDetails"><span id="ProductSerialNumber"></span></div>
+                        </div>
+
+                        <!-- <div class="orderProcessDiv">
+                            <button class="orderProcessBtn" id="orderProcessBtn">Process</button>
+                        </div> -->
+                    </div>
+
+                </div>
+            </div>
         </div>
 
 

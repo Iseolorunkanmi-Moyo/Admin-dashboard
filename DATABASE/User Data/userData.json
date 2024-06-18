@@ -1,0 +1,30 @@
+[
+    {
+        "uniqueNumber" : "6",
+        "userImageSrc" :"https://app.side.xyz/assets/metamask-DOko_CCd.svg",
+        "name": "Joseph ",
+        "email": "mj@gmail.com",
+        "phone" : "0810142868",
+        "address": "Landmark university",
+        "pendingOrders": "3"        
+    }, 
+    {
+        "uniqueNumber" : "2",
+        "userImageSrc" :"https://www.shutterstock.com/image-photo/bangkokthailand-may-17-2015-minions-260nw-279680093.jpg",
+        "name": " Moyo",
+        "email": "tomisin@gmail.com",
+        "phone" : "0810142868",
+        "address": "Landmark university",
+        "pendingOrders": "1"
+    }, 
+    {
+        "uniqueNumber" : "3",
+        "userImageSrc" :"/FRONTEND/images/javier-miranda-N7mrKzGhKro-unsplash.jpg",
+        "name": "Tderreomi",
+        "email": "qutrit@gmail.com",
+        "phone" : "0810142868",
+        "address": "Landmark university",
+        "pendingOrders": "1"
+    }
+   
+]

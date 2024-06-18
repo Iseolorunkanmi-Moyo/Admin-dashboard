@@ -1,0 +1,34 @@
+[
+    {
+        "imageSrc": "/FRONTEND/ADMIN/products/FUTAHUB Logo.png",
+        "name": "Nike",
+        "price" : "$10.00",
+        "stock" : "100 pieces left"
+    },{
+        "imageSrc": "/FRONTEND/ADMIN/products/FUTAHUB Logo.png",
+        "name": "Nike",
+        "price" : "$10.00",
+        "stock" : "110 pieces left"
+    }, {
+        "imageSrc": "/FRONTEND/ADMIN/products/FUTAHUB Logo.png",
+        "name": "Nike",
+        "price" : "$10.00",
+        "stock" : "100 pieces in stock"
+    },{
+        "imageSrc": "/FRONTEND/ADMIN/products/FUTAHUB Logo.png",
+        "name": "Nike",
+        "price" : "$10.00",
+        "stock" : "110 pieces in stock"
+    },{
+        "imageSrc": "/FRONTEND/ADMIN/products/FUTAHUB Logo.png",
+        "name": "Nike",
+        "price" : "$30.00",
+        "stock" : "100 pieces in stock"
+    },
+    {
+        "imageSrc": "/FRONTEND/ADMIN/products/FUTAHUB Logo.png",
+        "name": "Nike",
+        "price" : "$10.00",
+        "stock" : "100 pieces in stock"
+    }
+]

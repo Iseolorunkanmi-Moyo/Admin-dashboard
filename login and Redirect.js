@@ -10,13 +10,11 @@ if(!localStorage.hasOwnProperty('AdminDash')){
 
 else{
     var details = localStorage.getItem('AdminDash')
-    // console.log(details)
     var Importedemail =  JSON.parse(details)
-    console.log(Importedemail)
-    console.log(Importedemail.email)
+
     document.getElementById("name").innerHTML = Importedemail.name
+    // document.getElementById("profile-pic").setAttribute('src', Importedemail.adminImage)
 }
-//
 
 var logoutBtn = document.getElementById("logout")
 logoutBtn.addEventListener("click", logoutFunc)

@@ -1,10 +1,12 @@
 [
     
     {
+        "unique" : "1",
         "name": "Joseph Moyo",
         "email": "qutrit11@gmail.com",
         "password" : "moyo",
-        "phone" : "0810142868"
+        "phone" : "0810142868"   ,
+        "adminUserImgSrc" : "/FRONTEND/images/javier-miranda-N7mrKzGhKro-unsplash.jpg"
     }
    
 ]

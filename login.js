@@ -78,6 +78,7 @@ function Login() {
                 var indexNumber = [];
                 var tempEmailStorage = "Not found";
                 var tempPasswordStorage = "Not found";
+                var adminUserImgSrc = "Not found"
 
 
                 for (let i = 0; i < objectData.length; i++) {
@@ -90,6 +91,7 @@ function Login() {
                         tempEmailStorage = objectData[i].email
                         tempPasswordStorage = objectData[i].password
                         tempNameStorage = objectData[i].name
+                        adminUserImgSrc = objectData[i].adminUserImgSrc
                         userImageSrc = objectData[i].imageSrc
                     }
 
@@ -123,7 +125,8 @@ function Login() {
                         var setLocalStorage = {
                                                 "email":email.value,
                                                 "password":password.value,
-                                                "name": tempNameStorage
+                                                "name": tempNameStorage,
+                                                "adminImage" : adminUserImgSrc
                                             }
 
                         localStorage.setItem('AdminDash', JSON.stringify(setLocalStorage))
